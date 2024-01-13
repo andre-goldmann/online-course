@@ -1,2 +1,5 @@
 server:
   port: '4080'
+
+pokeapi:
+  base-uri: "https://pokeapi.co/api/v2/"
