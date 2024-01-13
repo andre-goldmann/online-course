@@ -10,9 +10,9 @@ import com.vaadin.flow.router.Route;
 
 
 @Route("formlayout")
-public class FormLayoutDemo extends FormLayout {
+public class FormLayoutDemo extends VerticalLayout {
     public FormLayoutDemo() {
-
+        FormLayout layout = new FormLayout();
         TextField firstName = new TextField("First Name");
         TextField lastName = new TextField("Last Name");
 
@@ -21,7 +21,9 @@ public class FormLayoutDemo extends FormLayout {
             Notification.show(message);
         });
 
-        add(firstName, lastName, submitButton);
+        layout.add(firstName, lastName, submitButton);
+
+        add(layout);
 
         Button backBtn = MainView.createBtn("Back");
         backBtn.addClickListener(e ->

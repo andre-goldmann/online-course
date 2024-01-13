@@ -8,7 +8,8 @@ import com.vaadin.flow.component.html.Span;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.router.Route;
 
-import static de.goldmann.onlinecourse.web.MainView.createBtn;
+import static de.goldmann.onlinecourse.interfaces.web.MainView.createBtn;
+
 
 @Route("collapsable-layout")
 public class CollapsableLayoutRecipe extends VerticalLayout {

@@ -1,4 +1,4 @@
-package de.goldmann.onlinecourse.web;
+package de.goldmann.onlinecourse.interfaces.web;
 
 import com.vaadin.flow.component.Tag;
 import com.vaadin.flow.component.dependency.JsModule;
@@ -8,8 +8,6 @@ import com.vaadin.flow.component.littemplate.LitTemplate;
 
 import java.util.Arrays;
 
-import static de.goldmann.onlinecourse.web.TailwindClassnamesPartOne.tailwindCSSPartOne;
-import static de.goldmann.onlinecourse.web.TailwindClassnamesPartTwo.tailwindCSSPartTwo;
 
 //@Tag("hello-world")
 // has not effect for tailwind

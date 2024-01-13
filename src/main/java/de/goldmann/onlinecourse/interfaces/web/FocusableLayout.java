@@ -22,7 +22,8 @@ import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.data.provider.ListDataProvider;
 import com.vaadin.flow.router.Route;
 
-import static de.goldmann.onlinecourse.web.MainView.createBtn;
+import static de.goldmann.onlinecourse.interfaces.web.MainView.createBtn;
+
 
 @Route("focusable-layout")
 public class FocusableLayout extends VerticalLayout {

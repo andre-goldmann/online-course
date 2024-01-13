@@ -10,7 +10,6 @@ import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.shared.Registration;
 
-import static de.goldmann.onlinecourse.web.MainView.createBtn;
 
 /**
  * A starting point for creating a custom collapsable layout with a configurable header.
