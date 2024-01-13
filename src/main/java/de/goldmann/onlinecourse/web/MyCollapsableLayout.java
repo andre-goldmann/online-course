@@ -4,10 +4,13 @@ import com.vaadin.flow.component.ClickEvent;
 import com.vaadin.flow.component.Component;
 import com.vaadin.flow.component.ComponentEvent;
 import com.vaadin.flow.component.ComponentEventListener;
+import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.html.Div;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.shared.Registration;
+
+import static de.goldmann.onlinecourse.web.MainView.createBtn;
 
 /**
  * A starting point for creating a custom collapsable layout with a configurable header.
@@ -57,6 +60,7 @@ public class MyCollapsableLayout extends VerticalLayout {
 
         add(header);
         addAndExpand(content);
+
     }
 
     protected void onHeaderClick(ClickEvent<HorizontalLayout> horizontalLayoutClickEvent) {

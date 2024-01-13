@@ -22,6 +22,8 @@ import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.data.provider.ListDataProvider;
 import com.vaadin.flow.router.Route;
 
+import static de.goldmann.onlinecourse.web.MainView.createBtn;
+
 @Route("focusable-layout")
 public class FocusableLayout extends VerticalLayout {
 
@@ -123,6 +125,13 @@ public class FocusableLayout extends VerticalLayout {
 
         hLayout.add(vLayout, mLayout);
         add(hLayout);
+
+        Button backBtn = createBtn("Back");
+        backBtn.addClickListener(e ->
+                backBtn.getUI().ifPresent(ui ->
+                        ui.navigate(""))
+        );
+        add(backBtn);
     }
 
     public class MyLayout extends FlexLayout implements Focusable<MyLayout> {

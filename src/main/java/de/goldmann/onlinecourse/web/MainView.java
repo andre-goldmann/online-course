@@ -23,8 +23,8 @@ import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 @Route("") // map view to the root
-@Theme(value="tailwind")//, variant= Lumo.DARK)
-@CssImport("./styles.css")
+//@Theme(value="tailwind")//, variant= Lumo.DARK)
+//@CssImport("./styles.css")
 class MainView extends VerticalLayout implements AppShellConfigurator {
 
     public MainView() {
@@ -57,14 +57,14 @@ class MainView extends VerticalLayout implements AppShellConfigurator {
         );
         add(flexLayoutBtn);
 
-        Button templatesBtn = createBtn("Templates Examples");
+        /*Button templatesBtn = createBtn("Templates Examples");
         templatesBtn.addClickListener(e ->
                 templatesBtn.getUI().ifPresent(ui ->
                         ui.navigate("templates"))
         );
-        add(templatesBtn);
+        add(templatesBtn);*/
 
-        Button formLayoutBtn = createBtn("Templates Examples");
+        Button formLayoutBtn = createBtn("Form Layout Examples");
         formLayoutBtn.addClickListener(e ->
                 formLayoutBtn.getUI().ifPresent(ui ->
                         ui.navigate("formlayout"))

@@ -70,8 +70,7 @@
     "construct-style-sheets-polyfill": "3.1.0",
     "date-fns": "^2.30.0",
     "lit": "3.1.0",
-    "style-loader": "^3.3.4",
-    "tailwindcss": "3.4.1"
+    "style-loader": "^3.3.4"
   },
   "devDependencies": {
     "@rollup/plugin-replace": "5.0.4",
@@ -162,8 +161,7 @@
       "@vaadin/virtual-list": "24.3.2",
       "construct-style-sheets-polyfill": "3.1.0",
       "date-fns": "2.29.3",
-      "lit": "3.1.0",
-      "tailwindcss": "3.4.1"
+      "lit": "3.1.0"
     },
     "devDependencies": {
       "@rollup/plugin-replace": "5.0.4",
@@ -183,7 +181,7 @@
       "workbox-core": "7.0.0",
       "workbox-precaching": "7.0.0"
     },
-    "hash": "525652793b0f7346f2ff446d5feddaff872555d70d9e21a4fbba2a33440dab67"
+    "hash": "23ed542a10fc9a477f6170a0efbb3fbf154f88eab69c1d11d1d71b189afca22b"
   },
   "overrides": {
     "@vaadin/bundles": "$@vaadin/bundles",

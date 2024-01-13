@@ -83,16 +83,16 @@ public class HorizontalLayoutDemo  extends VerticalLayout {
         });
         add(changeBtn);
         // TODO add Inputs to set CSS-Style
-
+        add(new SplitButtonBar());
+        
         /////////////////////////////////////////
+
         Button backBtn = createBtn("Back");
         backBtn.addClickListener(e ->
                 backBtn.getUI().ifPresent(ui ->
                         ui.navigate(""))
         );
         add(backBtn);
-
-        add(new SplitButtonBar());
     }
 
 }

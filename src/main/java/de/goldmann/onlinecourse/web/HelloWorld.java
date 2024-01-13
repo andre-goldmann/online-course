@@ -11,10 +11,10 @@ import java.util.Arrays;
 import static de.goldmann.onlinecourse.web.TailwindClassnamesPartOne.tailwindCSSPartOne;
 import static de.goldmann.onlinecourse.web.TailwindClassnamesPartTwo.tailwindCSSPartTwo;
 
-@Tag("hello-world")
+//@Tag("hello-world")
 // has not effect for tailwind
-@NpmPackage(value = "tailwindcss", version = "3.4.1")
-@JsModule("./src/hello-world.ts")
+//@NpmPackage(value = "tailwindcss", version = "3.4.1")
+//@JsModule("./src/hello-world.ts")
 public class HelloWorld extends LitTemplate {
 
     /**

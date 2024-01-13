@@ -8,6 +8,8 @@ import com.vaadin.flow.component.html.Span;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.router.Route;
 
+import static de.goldmann.onlinecourse.web.MainView.createBtn;
+
 @Route("collapsable-layout")
 public class CollapsableLayoutRecipe extends VerticalLayout {
 
@@ -30,6 +32,13 @@ public class CollapsableLayoutRecipe extends VerticalLayout {
 
         //Change the button caption based on the collapse state change
         collapsableLayout.addCollapseChangeListener(e -> collapseButton.setText(e.isCurrentlyVisible() ? "Hide" : "Show"));
+        Button backBtn = createBtn("Back");
+        backBtn.addClickListener(e ->
+                backBtn.getUI().ifPresent(ui ->
+                        ui.navigate(""))
+        );
+        add(backBtn);
+
     }
 
     //Just something to show/hide
