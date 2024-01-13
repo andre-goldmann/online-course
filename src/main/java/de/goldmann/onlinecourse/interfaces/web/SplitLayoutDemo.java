@@ -7,11 +7,13 @@ import com.vaadin.flow.component.html.*;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.component.splitlayout.SplitLayout;
 import com.vaadin.flow.component.splitlayout.SplitLayoutVariant;
+import com.vaadin.flow.router.PageTitle;
 import com.vaadin.flow.router.Route;
 
 import java.util.concurrent.atomic.AtomicInteger;
 
-@Route("splitlayout")
+@Route(value="splitlayout", layout = MainView.class)
+@PageTitle("SplitLayoutDemo")
 public class SplitLayoutDemo extends VerticalLayout {
     public SplitLayoutDemo() {
 

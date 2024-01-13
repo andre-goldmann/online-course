@@ -3,11 +3,13 @@ package de.goldmann.onlinecourse.interfaces.web;
 import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.orderedlayout.FlexLayout;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
+import com.vaadin.flow.router.PageTitle;
 import com.vaadin.flow.router.Route;
 
 import static de.goldmann.onlinecourse.interfaces.web.MainView.createBtn;
 
-@Route("flexlayout")
+@Route(value="flexlayout", layout = MainView.class)
+@PageTitle("FlexLayoutDemo")
 public class FlexLayoutDemo extends VerticalLayout {
     public FlexLayoutDemo() {
 

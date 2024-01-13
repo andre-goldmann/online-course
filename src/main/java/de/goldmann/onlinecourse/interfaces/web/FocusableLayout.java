@@ -20,12 +20,14 @@ import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.component.orderedlayout.FlexLayout;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.data.provider.ListDataProvider;
+import com.vaadin.flow.router.PageTitle;
 import com.vaadin.flow.router.Route;
 
 import static de.goldmann.onlinecourse.interfaces.web.MainView.createBtn;
 
 
-@Route("focusable-layout")
+@Route(value = "focusable-layout", layout = MainView.class)
+@PageTitle("FocusableLayout Demo")
 public class FocusableLayout extends VerticalLayout {
 
     private List<String> draggedItems;

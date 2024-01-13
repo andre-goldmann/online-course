@@ -4,6 +4,7 @@ import com.vaadin.flow.component.button.Button;
 import com.vaadin.flow.component.combobox.ComboBox;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
+import com.vaadin.flow.router.PageTitle;
 import com.vaadin.flow.router.Route;
 
 import java.util.HashSet;
@@ -11,7 +12,9 @@ import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 
-@Route("horizontallayout")
+//@Route("horizontallayout")
+@Route(value="horizontallayout", layout = MainView.class)
+@PageTitle("HorizontalLayoutDemo")
 public class HorizontalLayoutDemo  extends VerticalLayout {
     public HorizontalLayoutDemo() {
 

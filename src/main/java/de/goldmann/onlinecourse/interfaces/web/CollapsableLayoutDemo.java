@@ -6,15 +6,17 @@ import com.vaadin.flow.component.combobox.ComboBox;
 import com.vaadin.flow.component.datepicker.DatePicker;
 import com.vaadin.flow.component.html.Span;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
+import com.vaadin.flow.router.PageTitle;
 import com.vaadin.flow.router.Route;
 
 import static de.goldmann.onlinecourse.interfaces.web.MainView.createBtn;
 
 
-@Route("collapsable-layout")
-public class CollapsableLayoutRecipe extends VerticalLayout {
+@Route(value = "collapsable-layout", layout = MainView.class)
+@PageTitle("CollapsableLayout Demo")
+public class CollapsableLayoutDemo extends VerticalLayout {
 
-    public CollapsableLayoutRecipe() {
+    public CollapsableLayoutDemo() {
 
         MyCollapsableLayout collapsableLayout = new MyCollapsableLayout();
         add(collapsableLayout);

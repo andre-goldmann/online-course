@@ -8,7 +8,8 @@ public class NamedApiResourceList<T extends PokeApiResource> implements PokeApiR
 
     private Integer count;
     private String next;
-    private Boolean previous;
+    //private Boolean previous;
+    private String previous;
     private List<NamedApiResource<T>> results;
 
     public Integer getCount() {
@@ -23,12 +24,21 @@ public class NamedApiResourceList<T extends PokeApiResource> implements PokeApiR
     public void setNext(String next) {
         this.next = next;
     }
-    public Boolean getPrevious() {
+    //public Boolean getPrevious() {
+    //    return previous;
+    //}
+    //public void setPrevious(Boolean previous) {
+    //  this.previous = previous;
+    //}
+
+    public String getPrevious() {
         return previous;
     }
-    public void setPrevious(Boolean previous) {
+
+    public void setPrevious(String previous) {
         this.previous = previous;
     }
+
     public List<NamedApiResource<T>> getResults() {
         return results;
     }

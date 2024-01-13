@@ -1,96 +1,59 @@
 package de.goldmann.onlinecourse.interfaces.web;
 
-import com.vaadin.flow.component.Component;
-import com.vaadin.flow.component.HasStyle;
+import com.vaadin.flow.component.applayout.AppLayout;
+import com.vaadin.flow.component.applayout.DrawerToggle;
 import com.vaadin.flow.component.button.Button;
-import com.vaadin.flow.component.combobox.ComboBox;
-import com.vaadin.flow.component.dependency.CssImport;
 import com.vaadin.flow.component.html.*;
-import com.vaadin.flow.component.orderedlayout.FlexLayout;
+import com.vaadin.flow.component.orderedlayout.FlexComponent;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
-import com.vaadin.flow.component.page.AppShellConfigurator;
-import com.vaadin.flow.component.splitlayout.SplitLayout;
-import com.vaadin.flow.component.splitlayout.SplitLayoutVariant;
-import com.vaadin.flow.router.Route;
-import com.vaadin.flow.theme.Theme;
-import com.vaadin.flow.theme.lumo.Lumo;
-import de.goldmann.onlinecourse.interfaces.api.pokemon.client.PokeApiClient;
-import de.goldmann.onlinecourse.interfaces.api.pokemon.resource.pokemon.Pokemon;
+import com.vaadin.flow.router.RouterLink;
+import com.vaadin.flow.theme.lumo.LumoUtility;
 
-import java.util.Collections;
-import java.util.HashSet;
-import java.util.concurrent.atomic.AtomicInteger;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
-
-@Route("") // map view to the root
+//@Route("") // map view to the root
 //@Theme(value="tailwind")//, variant= Lumo.DARK)
 //@CssImport("./styles.css")
-class MainView extends VerticalLayout implements AppShellConfigurator {
+class MainView extends AppLayout {
 
-    public MainView(PokeApiClient pokeApiClient) {
-        pokeApiClient.getResource(Pokemon.class, "pikachu")
-                .map(pokemon -> String.format("%s has %d forms", pokemon.getName(), pokemon.getForms().size()))
-                .subscribe(System.out::println);
+    public MainView() {
+        createHeader();
+        createDrawer();
+    }
 
-        Button hLayoutBtn = createBtn("Horizontal Layouts");
-        hLayoutBtn.addClickListener(e ->
-                hLayoutBtn.getUI().ifPresent(ui ->
-                        ui.navigate("horizontallayout"))
-        );
-        add(hLayoutBtn);
+    private void createHeader() {
+        H1 logo = new H1("Vaadin CRM");
+        logo.addClassNames(
+                LumoUtility.FontSize.LARGE,
+                LumoUtility.Margin.MEDIUM);
 
-        Button vLayoutBtn = createBtn("Vertical Layouts Examples");
-        vLayoutBtn.addClickListener(e ->
-                vLayoutBtn.getUI().ifPresent(ui ->
-                        ui.navigate("verticallayout"))
-        );
-        add(vLayoutBtn);
+        var header = new HorizontalLayout(new DrawerToggle(), logo );
 
-        Button splitLayoutBtn = createBtn("Split Layouts Examples");
-        splitLayoutBtn.addClickListener(e ->
-                splitLayoutBtn.getUI().ifPresent(ui ->
-                        ui.navigate("splitlayout"))
-        );
-        add(splitLayoutBtn);
+        header.setDefaultVerticalComponentAlignment(FlexComponent.Alignment.CENTER);
+        header.setWidthFull();
+        header.addClassNames(
+                LumoUtility.Padding.Vertical.NONE,
+                LumoUtility.Padding.Horizontal.MEDIUM);
 
-        Button flexLayoutBtn = createBtn("Split Layouts Examples");
-        flexLayoutBtn.addClickListener(e ->
-                flexLayoutBtn.getUI().ifPresent(ui ->
-                        ui.navigate("flexlayout"))
-        );
-        add(flexLayoutBtn);
-
-        /*Button templatesBtn = createBtn("Templates Examples");
-        templatesBtn.addClickListener(e ->
-                templatesBtn.getUI().ifPresent(ui ->
-                        ui.navigate("templates"))
-        );
-        add(templatesBtn);*/
-
-        Button formLayoutBtn = createBtn("Form Layout Examples");
-        formLayoutBtn.addClickListener(e ->
-                formLayoutBtn.getUI().ifPresent(ui ->
-                        ui.navigate("formlayout"))
-        );
-        add(formLayoutBtn);
-
-        Button focusableBtn = createBtn("Focusable Layout Example");
-        focusableBtn.addClickListener(e ->
-                focusableBtn.getUI().ifPresent(ui ->
-                        ui.navigate("focusable-layout"))
-        );
-        add(focusableBtn);
-
-        Button collapsableLayoutBtn = createBtn("Collapsable Layout Example");
-        collapsableLayoutBtn.addClickListener(e ->
-                focusableBtn.getUI().ifPresent(ui ->
-                        ui.navigate("collapsable-layout"))
-        );
-        add(collapsableLayoutBtn);
+        addToNavbar(header);
 
     }
+
+    private void createDrawer() {
+        addToDrawer(new VerticalLayout(
+                new RouterLink("Dashboard", Dashboard.class),
+                new RouterLink("Pokemon Demo", PokemonDemo.class),
+                new RouterLink("HorizontalLayout Demo", HorizontalLayoutDemo.class),
+                new RouterLink("VerticalLayout Demo", VerticalLayoutDemo.class),
+                new RouterLink("Splitlayout Demo", SplitLayoutDemo.class),
+                new RouterLink("FlexLayout Demo", FlexLayoutDemo.class),
+                new RouterLink("Templates Demo", TemplatesDemo.class),
+                new RouterLink("Formlayout Demo", FormLayoutDemo.class),
+                new RouterLink("FocusableLayout Demo", FocusableLayout.class),
+                new RouterLink("CollapsableLayou Demo", CollapsableLayoutDemo.class),
+                new RouterLink("Components Demo", ComponentsDemo.class)
+        ));
+    }
+
 
     public static Button createBtn(String caption){
         final Button b1 = new Button(caption);
