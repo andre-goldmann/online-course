@@ -6,22 +6,36 @@ import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.router.PageTitle;
 import com.vaadin.flow.router.Route;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 import static de.goldmann.onlinecourse.interfaces.web.MainView.createBtn;
 
 @Route(value = "components-demo", layout = MainView.class)
 @PageTitle("ComponentsDemo Demo")
 public class ComponentsDemo extends VerticalLayout {
+
+    List<Integer> elements = new ArrayList<>();
+    {
+        elements.add(1);
+        elements.add(2);
+        elements.add(3);
+    }
+
+
     public ComponentsDemo() {
-        final ComboBox<String> stringComboBox = new ComboBox<>();
+        final ComboBox<Integer> stringComboBox = new ComboBox<>();
         /*stringComboBox.getListDataView().addItem("");
         stringComboBox.getListDataView().addItem("Eins");
         stringComboBox.getListDataView().addItem("Zwei");*/
         //stringComboBox.setNewItemsAllowed(true);
-        stringComboBox.setItems("Chrome", "Edge", "Firefox", "Safari");
+        stringComboBox.setItems(elements);
+
 
         final Button reset = createBtn("Reset");
         reset.addClickListener(e -> {
-           stringComboBox.setValue("");
+           stringComboBox.clear();
             //stringComboBox.getDataProvider().
         });
         add(reset);

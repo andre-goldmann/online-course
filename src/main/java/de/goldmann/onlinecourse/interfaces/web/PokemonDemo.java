@@ -26,7 +26,10 @@ public class PokemonDemo extends VerticalLayout {
                 person -> person.getName());
         Set<Pokemon> pokemons = new HashSet<>();
         PageQuery query = new PageQuery(10, 1);
-
+        // Images:
+        //https://unpkg.com/pokeapi-sprites@2.0.2/sprites/pokemon/other/dream-world/87.svg
+        //https://pokeapi.co/api/v2/pokemon/23/ -> look in sprites
+        //https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/21.png
         // TODO how to do this in a better way and fill the CompoBox with more Entries
         List<NamedApiResource<Pokemon>> list = pokeApiClient.getResource(Pokemon.class, query)
                 .map(result -> result.getResults()).block();
