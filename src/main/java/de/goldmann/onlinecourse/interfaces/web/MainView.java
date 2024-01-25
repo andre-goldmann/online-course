@@ -50,7 +50,8 @@ class MainView extends AppLayout {
                 new RouterLink("Formlayout Demo", FormLayoutDemo.class),
                 new RouterLink("FocusableLayout Demo", FocusableLayout.class),
                 new RouterLink("CollapsableLayou Demo", CollapsableLayoutDemo.class),
-                new RouterLink("Components Demo", ComponentsDemo.class)
+                new RouterLink("Components Demo", ComponentsDemo.class),
+                new RouterLink("Canvas Demo", CanvasDemo.class)
         ));
     }
 
